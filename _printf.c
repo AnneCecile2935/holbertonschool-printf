@@ -12,6 +12,7 @@ specifiers type[] = {
 {'%', _print_pourcentage}, {'\0', NULL},};
 int i = 0;
 int j = 0;
+int count = 0;
 va_list arg;
 va_start(arg, format);
 while (format && format[i]) /* si le format est non nul*/
@@ -33,9 +34,10 @@ j++;
 else
 {
 _putchar(format[i]);
+count++;
 }
 i++;
 }
 va_end(arg);
-return (*format);
+return (count);
 }
