@@ -25,7 +25,8 @@ while (type[j].entry)
 {
 if (format[i] == type[j].entry) /* s'il y a une correspondance*/
 {
-count += type[j].print_func(arg);
+type[j].print_func(arg);
+count++;
 break; /* on s'arrête*/
 }
 j++;
