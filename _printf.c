@@ -25,6 +25,11 @@ int _printf(const char *format, ...)
             if (format[i] == '%') /* si dans la boucle on rencontre % alors on passe au caractère suivant*/
                 {
                     i++;
+if (format[i] == '%')
+{
+    _putchar('%');
+    count++;
+}
             j = 0;
                 while (type[j].entry) /* on recherche le specifieurs dans le tableau de la structure*/
                 {
