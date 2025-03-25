@@ -8,12 +8,16 @@
 
 void _print_decimal(va_list arg)
 {
-int i;
 int decimal = va_arg(arg, int);
 
 	if (decimal < 0)
 		{
 			putchar ('-');
-			decimal 
+			decimal = -decimal;
+		}
+	if (decimal == 0)
+		{
+			_putchar('0');
+			return;
 		}
 }
