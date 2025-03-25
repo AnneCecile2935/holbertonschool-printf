@@ -9,13 +9,12 @@
 void _print_strings(va_list arg)
 {
 	char *strings = va_arg(arg, char*);
-	/*if (strings != NULL)
+	if (strings != NULL)
 	{
-		_putchar(strings);
-	}*/
-	while(strings)
+	while(*strings)
 	{
 		_putchar(*strings);
 		strings++;
+	}
 	}
 }

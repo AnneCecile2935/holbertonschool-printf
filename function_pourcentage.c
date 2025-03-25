@@ -8,6 +8,6 @@
 
 void _print_pourcentage(va_list arg)
 {
-	int pourcentage = va_arg(arg, int);
-	_putchar(pourcentage);
+		int pourcentage = va_arg(arg, int);
+		_putchar(pourcentage);
 }

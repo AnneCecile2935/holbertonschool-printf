@@ -14,33 +14,38 @@ int _printf(const char *format, ...)
         {'\0', NULL},
         };
         int i = 0;
-        int j;
+        int j = 0;
+        int count = 0;
 
         va_list arg;
         va_start(arg, format);
 
         while (format && format[i]) /* si le format est non nul*/
-
         {
             if (format[i] == '%') /* si dans la boucle on rencontre % alors on passe au caractère suivant*/
                 {
                     i++;
             j = 0;
-            while (type[j].entry) /* on recherche le specifieurs dans le tableau de la structure*/
-            {
-                if (format[i]==type[j].entry) /* s'il y a une correspondance*/
+                while (type[j].entry) /* on recherche le specifieurs dans le tableau de la structure*/
                 {
+                    if (format[i]==type[j].entry) /* s'il y a une correspondance*/
+                    {
                     type[j].print_func(arg); /* on appelle la fonction correspondante, on lui donne les arguments */
-
-                }break; /* on s'arrête*/
-                j++;
-            }
+                    count++;
+                    break; /* on s'arrête*/
+                    }
+                    j++;
                 }
-        
-       _putchar(format[i]);
-        i++;
-            }
+                }
+                     else
+                    {
+                    _putchar(format[i]);
+                    count++;
+                    }
+                    i++;
+                    }
         _putchar('\n');
+        count++;
         va_end(arg);
-        return (0);
+        return (count);
 }
