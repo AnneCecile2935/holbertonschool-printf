@@ -10,7 +10,7 @@
 
 int print_int(va_list arg)
 {
-int num = va_arg(arg, int);
+long int num = va_arg(arg, int);
 char buffer[12];
 int count = 0;
 int neg = 0;
