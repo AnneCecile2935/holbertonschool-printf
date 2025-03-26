@@ -9,7 +9,7 @@ int _printf(const char *format, ...)
 {
 specifiers type[] = {
 {'c', print_char}, {'s', _print_strings},
-{'%', _print_pourcentage}, {'\0', NULL},};
+{'%', _print_pourcentage}, {'d', print_int}, {'i', print_int}, {'\0', NULL},};
 int i = 0;
 int j;
 int count = 0;

@@ -23,5 +23,6 @@ int _print_strings(va_list arg);
 int _print_pourcentage(va_list arg);
 int _putchar(char c);
 int print_char(va_list arg);
+int print_int(va_list arg);
 
 #endif /* MAIN_H */
