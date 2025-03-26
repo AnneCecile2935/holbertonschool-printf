@@ -11,7 +11,7 @@
 int print_int(va_list arg)
 {
 int num = va_arg(arg, int);
-char buffer[21];
+char buffer[12];
 int count = 0;
 int neg = 0;
 int i = 0;
