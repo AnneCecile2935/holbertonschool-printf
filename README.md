@@ -17,6 +17,8 @@ The prototypes of all  functions should be included in the header file called ma
 
 4) Man Page (commande d'exécution de la man page)
 
-5) Testing (comment ? + exemples) + valgrind pour les failles mémoire... 
+5) Testing (comment ? + exemples) + valgrind pour les failles mémoire...
 
 6) Flowchart
+
+mermaid
