@@ -9,7 +9,8 @@ int _print_strings(va_list arg)
 {
 	char *strings = va_arg(arg, char*);
 	int count = 0;
-	if (!strings)
+
+	if (!strings == NULL)
 	strings = "(null)";
 		while (*strings)
 	{
