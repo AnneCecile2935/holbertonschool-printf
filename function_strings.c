@@ -11,8 +11,10 @@ int _print_strings(va_list arg)
 	int count = 0;
 
 	if (strings == NULL)
-	strings = "(null)";
-		while (*strings)
+	{
+		strings = "(null)";
+	}
+	while (*strings)
 	{
 		_putchar(*strings);
 		strings++;
