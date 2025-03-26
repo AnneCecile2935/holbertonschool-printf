@@ -24,6 +24,7 @@ while (format && format[i]) /* si le format est non nul*/
 	i++;
 	for (j = 0; type[j].entry; j++)
 	{
+
 	if (format[i] == type[j].entry) /* s'il y a une correspondance*/
 	{
 	count += type[j].print_func(arg);
@@ -35,6 +36,11 @@ while (format && format[i]) /* si le format est non nul*/
 	_putchar ('%');
 	_putchar (format[i]);
 	count += 2;
+	}
+	if (format[i] == '\0')
+	{
+	_putchar ('%');
+	count +=1;
 	}
 	}
 	else
