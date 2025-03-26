@@ -1,7 +1,6 @@
 #include <limits.h>
 #include <stdio.h>
 #include "main.h"
-
 /**
  * main - Entry point
  *
@@ -11,7 +10,24 @@ int main(void)
 {
     int len2;
     int len;
-
+    _printf("%K\n");
+    printf("%K\n");
+    _printf("%!\n");
+    printf("%!\n");
+    _printf("%");
+    printf("%");
+    _printf("css%ccs%scscscs", 'T', "Test");
+    printf("css%ccs%scscscs", 'T', "Test");
+    _printf("%s%c%c%c%s%%%s%c", "Loading ", '.', '.', '.', " 99", " Please wait", '\n');
+    printf("%s%c%c%c%s%%%s%c", "Loading ", '.', '.', '.', " 99", " Please wait", '\n');
+    _printf("%c%cth %s%s a%cg%s: Y%sou %s no%ching%s Snow.%c", 'W', 'i', "some ", "more", 'r', "s", "", "know", 't', ", Jon", '\n');
+    printf("%c%cth %s%s a%cg%s: Y%sou %s no%ching%s Snow.%c", 'W', 'i', "some ", "more", 'r', "s", "", "know", 't', ", Jon", '\n');
+    _printf("Complete the sentence: You %s nothing, Jon Snow.\n", (char *)0);
+    printf("Complete the sentence: You %s nothing, Jon Snow.\n", (char *)0);
+    _printf("%s", "This sentence is retrieved from va_args!\n");
+    printf("%s", "This sentence is retrieved from va_args!\n");
+    _printf("Complete the sentence: You %s nothing, Jon Snow.\n", "know");
+    printf("Complete the sentence: You %s nothing, Jon Snow.\n", "know");
     len = _printf("Let's try to printf a simple sentence.\n");
     len2 = printf("Let's try to printf a simple sentence.\n");
     _printf("Length:[%d, %i]\n", len, len);

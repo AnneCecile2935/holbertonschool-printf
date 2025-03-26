@@ -1,0 +1,29 @@
+NAME
+_printf
+SYNOPSIS
+int _printf(const char *format, ...)
+DESCRIPTION
+The  functions  in  the _printf() family produce output according to a format as described below.  The functions printf() write output to stdout, the standard output stream.
+The functions _printf() is called  with a va_list instead of a variable number of arguments.  These functions do not call the va_end macro.
+Because they invoke the va_arg macro, the value of ap is undefined after the call.
+See stdarg(3).
+This functions write the output under the control of a format string that specifies how subsequent  arguments  (or  arguments  accessed  via  the  variable-length  argument  facilities  of
+stdarg(3)) are converted for output.
+C99  and POSIX.1-2001 specify that the results are undefined if a call to sprintf(), snprintf(), vsprintf(), or vsnprintf() would cause copying to take place between objects that overlap (e.g., if
+the target string array and one of the supplied input arguments refer to the same buffer).  See CAVEATS.
+Conversion specifiers
+s       If no l modifier is present: the const char * argument is expected to be a pointer to an array of character type (pointer to a string).  Characters from the array are written up to (but not
+         including)  a terminating null byte ('\0'); if a precision is specified, no more than the number specified are written.  If a precision is given, no null byte need be present; if the preci‐
+        sion is not specified, or is greater than the size of the array, the array must contain a terminating null byte.
+c       the int argument is converted to an unsigned char, and the resulting character is written.  If an l modifier is present, the wint_t (wide character) argument is
+        converted to a multibyte sequence by a call to the wcrtomb(3) function, with a conversion state starting in the initial state, and the resulting multibyte string is written.
+%        A '%' is written.  No argument is converted.  The complete conversion specification is '%%'.
+i,d     The int argument is converted to signed decimal notation.  The precision, if any, gives the minimum number of digits that must appear; if the converted value requires fewer  digits,  it  is
+        padded on the left with zeros.  The default precision is 1.  When 0 is printed with an explicit precision 0, the output is empty.
+RETURN VALUE
+        Upon successful return, these functions return the number of bytes printed (excluding the null byte used to end output to strings).
+       The functions snprintf() and vsnprintf() do not write more than size bytes (including the terminating null byte ('\0')).  If the output was truncated due to this limit, then the  return  value  is
+       the  number  of  characters  (excluding the terminating null byte) which would have been written to the final string if enough space had been available.  Thus, a return value of size or more means
+       that the output was truncated.  (See also below under CAVEATS.)
+       If an output error is encountered, a negative value is returned.
+EXAMPLES
