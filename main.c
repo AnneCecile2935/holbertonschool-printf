@@ -10,6 +10,7 @@ int main(void)
 {
     int len2;
     int len;
+    _printf(NULL);
     _printf("%K\n");
     printf("%K\n");
     _printf("%!\n");

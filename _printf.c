@@ -16,34 +16,38 @@ int count = 0;
 int retour;
 va_list arg;
 va_start(arg, format);
+if (format == NULL)
+{
+	return (-1);
+}
 while (format && format[i]) /* si le format est non nul*/
-{
-if (format[i] == '%')
-{
-i++;
-for (j = 0; type[j].entry; j++)
-{
-if (format[i] == type[j].entry) /* s'il y a une correspondance*/
-{
-retour = type[j].print_func(arg);
-count += retour;
-break; /* on s'arrête*/
-}
-}
-if (!type[j].entry)
-{
-_putchar ('%');
-_putchar (format[i]);
-count += 2;
-}
-}
-else
-{
-_putchar(format[i]);
-count++;
-}
-i++;
-}
-va_end(arg);
-return (count);
+	{
+		if (format[i] == '%')
+	{
+	i++;
+	for (j = 0; type[j].entry; j++)
+	{
+	if (format[i] == type[j].entry) /* s'il y a une correspondance*/
+	{
+	retour = type[j].print_func(arg);
+	count += retour;
+	break; /* on s'arrête*/
+	}
+	}
+	if (!type[j].entry)
+	{
+	_putchar ('%');
+	_putchar (format[i]);
+	count += 2;
+	}
+	}
+	else
+	{
+	_putchar(format[i]);
+	count++;
+	}
+	i++;
+	}
+	va_end(arg);
+	return (count);
 }
