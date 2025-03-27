@@ -34,3 +34,4 @@ The prototypes of all  functions should be included in the header file called ma
   D -->|i| _print_int
   D -->|d| _print_int
   D -->|%| _print_pourcentage
+```
