@@ -17,23 +17,28 @@ Le code respecte le standard C89 et tous les avertissements lors de la compilati
 ```mermaid
 graph TD;
 
-flowchart TD
-A[Start] --> B[_printf]
-B --format(arg)--> C{format}
-C ----> D{ if format %}
-E -- Oui --> F{ if %specifier?}
-F -- non --> G[afficher chaine de caractère]
-G -->|c| K[_print_char]
-G -->|s| L[_print_strings]
-G -->|i| H[_print_int]
-G -->|d| I[_print_int]
-G -->|%| J[_print_pourcentage]
-K --> [_Printf]
-K --> [_Printf]
-K --> [_Printf]
-K --> [_Printf]
-K --> [_Printf]
-```
+    A["Start"] --> B["_printf"]
+    B -- format(arg) --> Z[va_list arg  va_start arg, format]
+    Z --> C{"if format NULL?"}
+    C -- NON --> D{"if format %?"}
+    C -- OUI --> F{"return -1"}
+    D -- OUI --> E{"if %specifier?"}
+    X["📌 Structure tableau associe spécifiers à fonction*"] -.-> E
+    D -- NON --> Q["_printf"]
+    E --> G["c"] & H["s"] & I["i"] & J["d"] & K["%"]
+    G --> L["_print_char*"]
+    H --> M["_print_strings*"]
+    I --> N["_print_int*"]
+    J --> O["_print_int*"]
+    K --> P["_print_pourcentage*"]
+    L --> Q
+    M --> Q
+    N --> Q
+    O --> Q
+    P --> Q
+Q --> R[va_end]
+R --> S[return count]
+    style X stroke-width:2px,stroke-dasharray: 2
 
 ### Exemple d'utilisation de la fonction _printf(code ou screenshots) avec le résultat en STDOUT
 
