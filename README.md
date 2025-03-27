@@ -17,6 +17,7 @@ Le code respecte le standard C89 et tous les avertissements lors de la compilati
 ```mermaid
 graph TD;
 
+flowchart TD
 A[Start] --> B[_printf]
 B --format(arg)--> C{format}
 C ----> D{ if format %}
