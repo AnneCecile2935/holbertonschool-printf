@@ -1,6 +1,6 @@
 # holbertonschool-printf
 # C - printf
-** <span style = "color:blue"> Cette  fonction produit une sortie selon le format rencontré. Notre fonction printf, engloble toute les fonctions pour traiter chaque cas de format rencontre (si la valeur donné est un entier, chaîne de caractère, caractère, etc...)<\span> **
+** <span style="color:blue"> Cette  fonction produit une sortie selon le format rencontré. Notre fonction printf, engloble toute les fonctions pour traiter chaque cas de format rencontre (si la valeur donné est un entier, chaîne de caractère, caractère, etc...)<\span> **
 
 ## Commande qui permet la compilation :
 gcc -Wall -Wextra -Werror -pedantic -std=gnu89 -Wno-format *.c
