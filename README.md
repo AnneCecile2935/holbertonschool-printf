@@ -24,6 +24,7 @@ The prototypes of all  functions should be included in the header file called ma
 
 ### Flowchart
 ```mermaid
+graph TD;
 
   A[Start] --format--> B[_printf]
   B --> C{format %}
