@@ -21,4 +21,16 @@ The prototypes of all  functions should be included in the header file called ma
 
 6) Flowchart
 
-mermaid
+
+### Flowchart
+```mermaid
+
+  A[Start] --format--> B[_printf]
+  B --> C{format %}
+  C -- Oui --> D{%specifier?}
+  C -- non --> E[afficher chaine de caractère]
+  D -->|c| _print_char
+  D -->|s| _print_strings
+  D -->|i| _print_int
+  D -->|d| _print_int
+  D -->|%| _print_pourcentage

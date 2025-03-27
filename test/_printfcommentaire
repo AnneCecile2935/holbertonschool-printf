@@ -1,0 +1,91 @@
+#include <stdarg.h>
+#include "main.h"
+/**
+* _printf - print the format
+* @format: arguments
+* Return: count number of characters
+*/
+int _printf(const char *format, ...)
+{
+	/* Partie 1 */
+specifiers type[] = {
+{'c', print_char}, {'s', _print_strings},
+{'%', _print_pourcentage}, {'d', print_int}, {'i', print_int}, {'\0', NULL},};
+int i = 0; /* Utilisé pour parcourir notre tableau*/
+int j; /* utilisé pour parcourir notre tableau, on l'initialise après dans le for*/
+int count = 0; /* variable qui contient le nombre de caractères imprimés au fur et à mesure*/
+	/* Partie 2 */
+
+va_list arg;
+va_start(arg, format);
+if (format == NULL)
+	return (-1);
+		/* Partie 3 */
+
+while (format && format[i]) /* si le format est non nul*/
+	{
+	if (format[i] == '%')
+	{
+	i++;
+		/* Partie 4 */
+	for (j = 0; type[j].entry; j++)
+	{
+	if (format[i] == type[j].entry) /* s'il y a une correspondance*/
+	{
+	count += type[j].print_func(arg);
+	break; /* on s'arrête*/
+	}
+	}
+	/* Partie 5 */
+	if (!type[j].entry)
+	{
+	_putchar ('%');
+	_putchar (format[i]);
+	count += 2;
+	}
+	}
+	else
+	{
+	_putchar(format[i]);
+	count++;
+	}
+	i++;
+	}
+	/* Partie 6 */
+	va_end(arg);
+	return (count);
+}
+
+/*
+ // Partie 1 //
+ * Dans un premier on fait appel à une structure tableau qui contient
+ les spécificateurs de format(type), où à l'intérieur sont décrites le nom du
+ spécificateurs avec la fonction qui y correspond. Ces fonctions ont été mis
+ sur une autre page pour éviter un code trop long et bien segmenter l'intérêt
+ de chaque page
+ // Partie 2 //
+ On initialise notre va_list pour l'utilisation de notre fonction variadique.
+ (On initialise une variable de x argument) et on la démarre pour pouvoir y accéder
+- on déclare ensuite une condtition que si notre format (argument) est null alors on retour
+une erreur
+// Partie 3 //
+Dans notre boucle ensuite on parcourt notre format (pourquoi le tableau ?) en vérifiant bien que le format
+est non null. Et si dans notre format/argument il y a la présence d'un % alors
+ensuite on incrémente (i++) pour passer au caractère suivant.
+// Partie 4 //
+Ensuite on déclare une boucle imbriqué qui va parcourir tous les éléments du tableau de type
+(notre structure tableau qui contient les spécificateurs) et donc dans notre boucle
+si le caractère après le % correspond à un spécificateur ont appel notre function qui
+contient différent fonction suivant le type d'argument rencontre (??)
+Et on l'ajoute à la variable count qui va stocker le total des caractères
+on quiite bien avec break pour éviter de traiter autre chose.
+// Partie 5 //
+Si aucun spécificateur n'a été trouvé alors le programme imprimé retourne % ??
+à l'inverse si le caractère courant n'est pas un %, on affiche seulement la chaine
+de caractère en continuant bien jusqu'à la fin avec l'incrémentation
+
+Partie 6
+On libère notre argument variadique et on retourne count qui contient le nombre
+total de caractères qui ont été imprimés.
+ *
+ */
