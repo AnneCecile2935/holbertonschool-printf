@@ -1,6 +1,10 @@
 # holbertonschool-printf
-# C - printf
-** <span style="color:blue"> Cette  fonction produit une sortie selon le format rencontré. Notre fonction printf, engloble toute les fonctions pour traiter chaque cas de format rencontre (si la valeur donné est un entier, chaîne de caractère, caractère, etc...)<\span> **
+```ruby
+require 'redcarpet'
+markdown = Redcarpet.new("C - printf")
+puts markdown.to_html
+```
+** Cette  fonction produit une sortie selon le format rencontré. Notre fonction printf, engloble toute les fonctions pour traiter chaque cas de format rencontre (si la valeur donné est un entier, chaîne de caractère, caractère, etc...)**
 
 ## Commande qui permet la compilation :
 gcc -Wall -Wextra -Werror -pedantic -std=gnu89 -Wno-format *.c
