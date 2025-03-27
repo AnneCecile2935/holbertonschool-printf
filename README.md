@@ -39,6 +39,7 @@ graph TD;
 Q --> R[va_end]
 R --> S[return count]
     style X stroke-width:2px,stroke-dasharray: 2
+```
 
 ### Exemple d'utilisation de la fonction _printf(code ou screenshots) avec le résultat en STDOUT
 
