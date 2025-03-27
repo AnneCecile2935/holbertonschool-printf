@@ -10,6 +10,7 @@ int main(void)
 {
     int len2;
     int len;
+    int thought;
     _printf(NULL);
     _printf("%K\n");
     printf("%K\n");
@@ -49,5 +50,7 @@ int main(void)
     printf("%d\n", INT_MAX);
     _printf("%d\n", INT_MIN);
     printf("%d\n", INT_MIN);
+    thought = _printf("Hello Samourai\n");
+    _printf("Length:%d\n", thought);
     return (0);
 }
