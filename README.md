@@ -17,17 +17,16 @@ Le code respecte le standard C89 et tous les avertissements lors de la compilati
 ```mermaid
 graph TD;
 
-  flowchart TD
-  A[Start] --> B[_printf]
-  B --format(arg)--> C{format}
-  C ----> D{ if format %}
-  E -- Oui --> F{ if %specifier?}
-  F -- non --> G[afficher chaine de caractère]
-  G -->|c| K[_print_char]
-  G -->|s| L[_print_strings]
-  G -->|i| H[_print_int]
-  G -->|d| I[_print_int]
-  G -->|%| J[_print_pourcentage]
+A[Start] --> B[_printf]
+B --format(arg)--> C{format}
+C ----> D{ if format %}
+E -- Oui --> F{ if %specifier?}
+F -- non --> G[afficher chaine de caractère]
+G -->|c| K[_print_char]
+G -->|s| L[_print_strings]
+G -->|i| H[_print_int]
+G -->|d| I[_print_int]
+G -->|%| J[_print_pourcentage]
 K --> [_Printf]
 K --> [_Printf]
 K --> [_Printf]
