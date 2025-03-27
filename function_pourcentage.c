@@ -8,14 +8,7 @@
  */
 int _print_pourcentage(va_list arg)
 {
-	(void)arg;
+	(void)arg;/*on utilise pas arg*/
 	 _putchar('%');
-	if (!'%')
-	{
-		return (-1);
-	}
-	else
-	{
-		return (1);
-	}
+	return(1);
 }

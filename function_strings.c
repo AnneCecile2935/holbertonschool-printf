@@ -7,14 +7,14 @@
  */
 int _print_strings(va_list arg)
 {
-	char *strings = va_arg(arg, char*);
-	int count = 0;
+	char *strings = va_arg(arg, char*); /*déclaration d'un pointeur */
+	int count = 0; /*initialisation du compteur à 0*/
 
 	if (strings == NULL)
 	{
-		strings = "(null)";
+		strings = "(null)";/*renvoie "(null)" si strings est NULL*/
 	}
-	while (*strings)
+	while (*strings) /*boucle qui parcourt la chaine et affiche les caractères un par un et incrémente le compteur pour le return*/
 	{
 		_putchar(*strings);
 		strings++;

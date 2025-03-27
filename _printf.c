@@ -13,24 +13,24 @@ specifiers type[] = {
 int i = 0;
 int j;
 int count = 0;
-va_list arg;
-va_start(arg, format);
+va_list arg;/*déclaration var argument*/
+va_start(arg, format);/*initialisation de l'argument*/
 if (format == NULL)
 	return (-1);
-while (format && format[i]) /* si le format est non nul*/
+while (format && format[i]) /* si le format est non nul, boucle qui parcourt le format*/
 	{
 	if (format[i] == '%')
 	{
 	i++;
-	for (j = 0; type[j].entry; j++)
+	for (j = 0; type[j].entry; j++)/*boucle qui permet de parcourir la structure*/
 	{
 	if (format[i] == type[j].entry) /* s'il y a une correspondance*/
 	{
-	count += type[j].print_func(arg);
+	count += type[j].print_func(arg);/* appel de la fonction et ajout au compteur*/
 	break; /* on s'arrête*/
 	}
 	}
-	if (!type[j].entry)
+	if (!type[j].entry)/* si pas de correspondance*/
 	{
 	_putchar ('%');
 	_putchar (format[i]);
@@ -39,11 +39,11 @@ while (format && format[i]) /* si le format est non nul*/
 	}
 	else
 	{
-	_putchar(format[i]);
+	_putchar(format[i]); /*on affiche les caractères normaux*/
 	count++;
 	}
 	i++;
 	}
-	va_end(arg);
-	return (count);
+	va_end(arg);/*libère l'argument*/
+	return (count);/*retour du compteur du nombre de caractère*/
 }

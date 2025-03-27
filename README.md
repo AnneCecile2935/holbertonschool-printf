@@ -1,21 +1,19 @@
 # holbertonschool-printf
-```ruby
-require 'redcarpet'
-markdown = Redcarpet.new("C - printf")
-puts markdown.to_html
-```
-** Cette  fonction produit une sortie selon le format rencontré. Notre fonction printf, engloble toute les fonctions pour traiter chaque cas de format rencontre (si la valeur donné est un entier, chaîne de caractère, caractère, etc...)**
+# C - printf
+** Cette fonction produit une sortie selon le format rencontré.
+Notre fonction printf, engloble toutes les fonctions pour traiter chaque cas de format rencontré (si la valeur donnée est un entier, chaîne de caractère, caractère, etc...)**
 
 ## Commande qui permet la compilation :
 gcc -Wall -Wextra -Werror -pedantic -std=gnu89 -Wno-format *.c
-	- gcc : est utiliser pour compiler notre code
+	- gcc : est utilisé pour compiler notre code
 Le code respecte le standard C89 et tous les avertissements lors de la compilation sont activés (si toutes les erreurs ne sont pas corrigés, alors la compilation ne fonctionnera pas) en compilant tous les fichiers qui se finissent par .c (cela évite de mettre tous les fichiers un par un dans notre gcc)
+	Après la compilation, un fichier a.out est créé. Et pour avoir notre/nos valeurs de retour, il faudra l'éxécuter sur le terminal via la commande ./a.out
 
 ## Exigences :
-	- Allowed editors: vi, vim, emacs
+	- éditeurs autorisés: vi, vim, emacs
 	- Tous les fichiers sont compilé sur Ubuntu 20.04 LTS
 	- Le code utilise le style Betty
-	- Notre structure, ainsi que les prototypes de toutes les fonctions sont inclus dans le main.h.
+	- Notre structure, ainsi que les prototypes de toutes les fonctions sont inclus dans le main.h
 
 ## Flowchart :
 ```mermaid
@@ -45,26 +43,38 @@ R --> S[return count]
     style X stroke-width:2px,stroke-dasharray: 2
 ```
 
-### Exemple d'utilisation de la fonction _printf(code ou screenshots) avec le résultat en STDOUT
+### Contenu du repo :
+	_putchar.c
+	main.h
+	_printf.c
+	function_char.c
+	function_integer.c
+	function_pourcentage.c
+	function_strings.c
+	a.out
+	main.c
+	man_3_printf
+	README.md
 
-### Man Page (commande d'exécution de la man page)
+#### Exemple d'utilisation de la fonction _printf(code ou screenshots) avec le résultat en STDOUT
 
-5) Exemples
-	5.1/ _printf("Negative:[%d]\n", -762534); --> retourne -762534
-	5.2/ _printf("%c%cth %s%s a%cg%s: Y%sou %s no%ching%s Snow.%c", 'W', 'i', "some ", "more", 'r', "s", "", "know", 't', ", Jon", '\n'); --> With some more args: You know nothing, Jon snow.
-	5.3/ _printf("Percent:[%%]\n"); --> %
-	5.4/ thought = _printf("Hello Samourai\n"); --> Hello Samourai
-	5.5/ _printf("Length:%d\n", thought); --> Lenght:15
+#### Comment accéder à la man page (via une commande d'exécution) :
+
+	man ./man_3_printf
+
+#### Exemples :
+	// _printf("Negative:[%d]\n", -762534); --> retourne -762534
+
+	// _printf("%c%cth %s%s a%cg%s: Y%sou %s no%ching%s Snow.%c", 'W', 'i', "some ", "more", 'r', "s", "", "know", 't', ", Jon", '\n'); --> With some more args: You know nothing, Jon snow.
+
+	// _printf("Percent:[%%]\n"); --> %
+
+	// thought = _printf("Hello Samourai\n"); --> Hello Samourai
+
+	// _printf("Length:%d\n", thought); --> Lenght:15
 
 
-6) Failles mémoire détectés ?
+#### Failles mémoire détectés ?
 On détecte une fuite de mémoire avec l'utilisation de Valgrind, un outil notamment utile pour mettre en évidence des potentiels fuite de mémoire.
-
 	- Valgrind ./a.out ! = total heap usage : allocs, frees, 1,024 bytes allocated
 	Après l'utilisation de Valgrind l'on peut voir que nous n'avons pas de fuite mémoire car notre allocation mémoire statique retiens bien une valeur retour (on retourne bien le nombre total de caractère imprimé et on ferme bien notre déclaration argument variadique par un va_end)
-
-
-6) Flowchart
-
-
-

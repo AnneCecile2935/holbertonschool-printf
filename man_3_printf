@@ -30,8 +30,63 @@ RETURN VALUE
 la fonction _printf retourne le nombres de caractère imprimés qui est stocké au fur et à mesure dans les différente boucle
 
 EXAMPLES
-au moins un exemples
-exemple sans spécifiers
+_printf("%s",Le campus de Laval est super sympa!"\n"); Sortie :Le campus de Laval est super sympa!
+_printf("%?") sortie:%?
+_printf("Negative:[%d]\n", -5654646); Sortie -5654646
+
+
+
+PROGRAMME SOURCE
+
+#include <stdarg.h>
+#include "main.h"
+/**
+* _printf - print the format
+* @format: arguments
+* Return: count number of characters
+*/
+/*int _printf(const char *format, ...)
+{
+specifiers type[] = {
+{'c', print_char}, {'s', _print_strings},
+{'%', _print_pourcentage}, {'d', print_int}, {'i', print_int}, {'\0', NULL},};
+int i = 0;
+int j;
+int count = 0;
+va_list arg;
+va_start(arg, format);
+if (format == NULL)
+	return (-1);
+while (format && format[i]) /* si le format est non nul
+	{
+	if (format[i] == '%')
+	{
+	i++;
+	for (j = 0; type[j].entry; j++)
+	{
+	if (format[i] == type[j].entry) /* s'il y a une correspondance
+	{
+	count += type[j].print_func(arg);
+	break; /* on s'arrête
+	}
+	}
+	if (!type[j].entry)
+	{
+	_putchar ('%');
+	_putchar (format[i]);
+	count += 2;
+	}
+	}
+	else
+	{
+	_putchar(format[i]);
+	count++;
+	}
+	i++;
+	}
+	va_end(arg);
+	return (count);
+}
 
 Date et auteur
 28-03-2024

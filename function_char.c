@@ -7,7 +7,7 @@
 */
 int print_char(va_list arg)
 {
-	char c = va_arg(arg, int);
+	char c = va_arg(arg, int);/*déclaration de variable c avec les arguments*/
 
 	_putchar(c);
 	return (1);
