@@ -9,8 +9,8 @@
  * donc qui gère les spécificateur telle que 'd' ou 's' ou encore 'c'.
  * @print_func: est un pointeur de fonction qui prendre en argument
  * va_list arg, il sera utilisé pour manipuler notre liste d'arguments en
- * fonction du type rencontré. (si nombre entier alors on appele fait
- * appel à notre fonction qui est lié)
+ * fonction du type rencontré. (si c'est un nombre entier alors on fait appelle
+ * à notre fonction qui est lié)
  *
  */
 typedef struct specifiers

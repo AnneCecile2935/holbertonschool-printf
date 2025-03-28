@@ -14,6 +14,8 @@ int main(void)
     _printf(NULL);
     _printf("%K\n");
     printf("%K\n");
+    _printf("%%\n");
+    printf("%%\n");
     _printf("%!\n");
     printf("%!\n");
     _printf("%");

@@ -2,7 +2,7 @@
 #include "main.h"
 /**
  * _print_strings - Affiche une chaîne de caractère
- * @arg: Contient la liste des arguments variadique
+ * @arg: Contient la liste des arguments variadiques
  * Return: On retourne le compteur du nombre de caractère
  */
 int _print_strings(va_list arg)

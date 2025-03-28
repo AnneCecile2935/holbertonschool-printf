@@ -2,10 +2,11 @@
 #include "main.h"
 
 /**
- * print_int - fonction qui retourne des valeurs quand elles sont négatives
- * et retourne la longueur de
+ * print_int - fonction qui afficheun entier ou un décimal qu'il soit négatif,
+ * positif ou égal à 0 et retourne la longueur d'une chaîne de caractère
+ * en nombre
  * @arg: Contient la liste des arguments variadique
- * Return: on retourne count
+ * Return: on retourne le nombre de caractère imprimés
  */
 
 int print_int(va_list arg)
