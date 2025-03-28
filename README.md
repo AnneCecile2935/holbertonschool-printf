@@ -20,7 +20,7 @@ Après la compilation, un fichier a.out est créé. Et pour avoir notre/nos vale
 - Notre structure, ainsi que les prototypes de toutes les fonctions sont inclus dans le main.h
 - aucune utilisation de la commande switch et de printf (excepté dans l'exemple du main.c)
 
-## \u1F4E6 Installation :
+## :computer: Installation :
 Sur Linux et macOS, utiliser directement un terminal ou sur windows, utiliser PowerShell et insérer ce code :
 
 git clone https://github.com/AnneCecile2935/holbertonschool-printf.git/utilisateur
