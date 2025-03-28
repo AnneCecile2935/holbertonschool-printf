@@ -86,7 +86,8 @@ _printf("Length:%d\n", thought); :arrow_right: Lenght:15
 #### :warning: Failles mémoire détectés ?
 On détecte une fuite de mémoire avec l'utilisation de Valgrind, un outil notamment utile pour mettre en évidence des potentiels fuite de mémoire.
 - on compile avec gcc.
-- Valgrind ./a.out ! = total heap usage : allocs, frees, 1,024 bytes allocated
+- Valgrind ./a.out ! = total heap usage : allocs, frees, 1,024 bytes allocated.
+
 Après l'utilisation de Valgrind, on peut voir que nous n'avons pas de fuite mémoire car notre allocation mémoire statique retiens bien une valeur retour.
 
 <h3 align="left">Languages and Tools:</h3>
