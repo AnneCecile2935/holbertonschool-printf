@@ -24,26 +24,26 @@ while (format && format[i]) /* si le format est non nul, boucle qui parcourt le 
 		i++;
 		for (j = 0; type[j].entry; j++)/*boucle qui permet de parcourir la structure*/
 			{
-				if (format[i] == type[j].entry) /* s'il y a une correspondance*/
-			{
-		count += type[j].print_func(arg);/* appel de la fonction et ajout au compteur*/
-		break; /* on s'arrête*/
+					if (format[i] == type[j].entry) /* s'il y a une correspondance*/
+						{
+							count += type[j].print_func(arg);/* appel de la fonction et ajout au compteur*/
+							break; /* on s'arrête*/
+						}
+			}
+					if (!type[j].entry)/* si pas de correspondance*/
+						{
+							_putchar ('%');
+							_putchar (format[i]);
+							count += 2;
+						}
 		}
-		}
-			if (!type[j].entry)/* si pas de correspondance*/
+		else
 		{
-			_putchar ('%');
-			_putchar (format[i]);
-			count += 2;
+			_putchar(format[i]); /*on affiche les caractères normaux*/
+			count++;
 		}
-	}
-	else
-	{
-		_putchar(format[i]); /*on affiche les caractères normaux*/
-		count++;
-	}
 		i++;
 	}
-	va_end(arg);/*libère l'argument*/
-	return (count);/*retour du compteur du nombre de caractère*/
+va_end(arg);/*libère l'argument*/
+return (count);/*retour du compteur du nombre de caractère*/
 }
