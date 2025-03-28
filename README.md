@@ -1,8 +1,7 @@
-# <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkOsDLXeCr-IfKDnkeycWiqx5Uc_F5fDugNg&s" alt="Logo Holberton" width="100"/> holbertonschool-printf
+# Holbertonschool-printf  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkOsDLXeCr-IfKDnkeycWiqx5Uc_F5fDugNg&s" alt="Logo Holberton" width="100"/>
 
 # :dart: C - printf
-** Cette fonction produit une sortie selon le format rencontré.
-Notre fonction _printf, engloble toutes les fonctions pour traiter chaque cas de format rencontré (si la valeur donnée est un entier, une chaîne de caractère, un caractère, etc...)**
+__Cette fonction produit une sortie selon le format rencontré (si la valeur donnée est un entier, une chaîne de caractère, un caractère, etc...)__
 
 ##  :cyclone: Commande qui permet la compilation :
 gcc -Wall -Wextra -Werror -pedantic -std=gnu89 -Wno-format *.c
@@ -91,4 +90,5 @@ On détecte une fuite de mémoire avec l'utilisation de Valgrind, un outil notam
 	Après l'utilisation de Valgrind l'on peut voir que nous n'avons pas de fuite mémoire car notre allocation mémoire statique retiens bien une valeur retour.
 
 <h3 align="left">Languages and Tools:</h3>
-<p align="left"> <a href="https://www.cprogramming.com/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/c/c-original.svg" alt="c" width="40" height="40"/> </a> <a href="https://git-scm.com/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg" alt="git" width="40" height="40"/> </a> </p>
+<p align="left"> <a href="https://www.cprogramming.com/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/c/c-original.svg" alt="c" width="40" height="40"/> </a> <a href="https://git-scm.com/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg" alt="git" width="40" height="40"/> </a>
+</a> <a href="https://mermaid.live/" target="_blank" rel="noreferrer"> <img src="https://cdn-1.webcatalog.io/catalog/mermaid-live-editor/mermaid-live-editor-icon-filled-256.png?v=1714775108269" alt="git" width="40" height="40"/> </a> </p>
