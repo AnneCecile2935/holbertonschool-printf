@@ -1,11 +1,10 @@
-# holbertonschool-printf
-<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkOsDLXeCr-IfKDnkeycWiqx5Uc_F5fDugNg&s" alt="Logo Holberton" width="100"/>
+# <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkOsDLXeCr-IfKDnkeycWiqx5Uc_F5fDugNg&s" alt="Logo Holberton" width="100"/> holbertonschool-printf
 
-# \u1F3AF C - printf
+# :dart: C - printf
 ** Cette fonction produit une sortie selon le format rencontré.
 Notre fonction _printf, engloble toutes les fonctions pour traiter chaque cas de format rencontré (si la valeur donnée est un entier, une chaîne de caractère, un caractère, etc...)**
 
-## \u1F4BB Commande qui permet la compilation :
+##  :cyclone: Commande qui permet la compilation :
 gcc -Wall -Wextra -Werror -pedantic -std=gnu89 -Wno-format *.c
 * gcc : est utilisé pour compiler notre code
 * Wall - Wextra - Werror -pedantic -std=gnu89 : Le code respecte le standard C89 et tous les avertissements lors de la compilation sont activés (si toutes les erreurs ne sont pas corrigées, alors la compilation ne fonctionnera pas)
@@ -13,7 +12,7 @@ gcc -Wall -Wextra -Werror -pedantic -std=gnu89 -Wno-format *.c
 
 Après la compilation, un fichier a.out est créé. Et pour avoir notre/nos valeurs de retour, il faudra l'exécuter sur le terminal via la commande ./a.out
 
- ## \u26A0 Exigences :
+ ## :triangular_flag_on_post: Exigences :
 - éditeurs autorisés: vi, vim, emacs
 - Tous les fichiers sont compilés sur Ubuntu 20.04 LTS
 - Le code utilise le style Betty
@@ -25,7 +24,7 @@ Sur Linux et macOS, utiliser directement un terminal ou sur windows, utiliser Po
 
 git clone https://github.com/AnneCecile2935/holbertonschool-printf.git/utilisateur
 
-## Flowchart :
+## :link: Flowchart :
 ```mermaid
 graph TD;
 
@@ -53,7 +52,7 @@ R --> S[return count]
     style X stroke-width:2px,stroke-dasharray: 2
 ```
 
-### \u1F4C1 Contenu du repo :
+### :paperclip: Contenu du repo :
 
 | Fichiers               | Description |
 |------------------------|------------------------------------------------------------------------------------------------------------------------|
@@ -69,11 +68,11 @@ R --> S[return count]
 |man_3_printf| Manuel de notre fonction _printf|
 |README.md| Explication et installation de la fonction|
 
-#### \u1F4A1 Comment accéder à la man page (via une commande d'exécution) :
+#### :mag_right: Comment accéder à la man page (via une commande d'exécution) :
 
 	man ./man_3_printf
 
-#### Exemples de sortie :
+####  :ballot_box_with_check: Exemples de sortie :
 _printf("Negative:[%d]\n", -762534); :arrow_right: -762534
 
 _printf("%c%cth %s%s a%cg%s: Y%sou %s no%ching%s Snow.%c", 'W', 'i', "some ", "more", 'r', "s", "", "know", 't', ", Jon", '\n'); :arrow_right: With some more args: You know nothing, Jon snow.
@@ -85,7 +84,7 @@ thought = _printf("Hello Samourai\n"); :arrow_right: Hello Samourai
 _printf("Length:%d\n", thought); :arrow_right: Lenght:15
 
 
-#### \u1F4A5 Failles mémoire détectés ?
+#### :warning: Failles mémoire détectés ?
 On détecte une fuite de mémoire avec l'utilisation de Valgrind, un outil notamment utile pour mettre en évidence des potentiels fuite de mémoire.
 	- on compile avec gcc.
 	- Valgrind ./a.out ! = total heap usage : allocs, frees, 1,024 bytes allocated
