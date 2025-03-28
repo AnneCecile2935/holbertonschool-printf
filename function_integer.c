@@ -11,10 +11,11 @@
 int print_int(va_list arg)
 {
 long int num = va_arg(arg, int);
-char buffer[12];
+char buffer[21];
 int count = 0;
 int neg = 0; /*pour suivre si nombre positif*/
 int i = 0;
+
 
 if (num == 0)
 {

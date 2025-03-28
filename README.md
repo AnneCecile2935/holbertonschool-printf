@@ -1,19 +1,27 @@
 # holbertonschool-printf
 # C - printf
 ** Cette fonction produit une sortie selon le format rencontré.
-Notre fonction printf, engloble toutes les fonctions pour traiter chaque cas de format rencontré (si la valeur donnée est un entier, chaîne de caractère, caractère, etc...)**
+Notre fonction _printf, engloble toutes les fonctions pour traiter chaque cas de format rencontré (si la valeur donnée est un entier, une chaîne de caractère, un caractère, etc...)**
 
 ## Commande qui permet la compilation :
 gcc -Wall -Wextra -Werror -pedantic -std=gnu89 -Wno-format *.c
-	- gcc : est utilisé pour compiler notre code
-Le code respecte le standard C89 et tous les avertissements lors de la compilation sont activés (si toutes les erreurs ne sont pas corrigés, alors la compilation ne fonctionnera pas) en compilant tous les fichiers qui se finissent par .c (cela évite de mettre tous les fichiers un par un dans notre gcc)
-	Après la compilation, un fichier a.out est créé. Et pour avoir notre/nos valeurs de retour, il faudra l'éxécuter sur le terminal via la commande ./a.out
+* gcc : est utilisé pour compiler notre code
+* Wall - Wextra - Werror -pedantic -std=gnu89 : Le code respecte le standard C89 et tous les avertissements lors de la compilation sont activés (si toutes les erreurs ne sont pas corrigées, alors la compilation ne fonctionnera pas)
+* Wno-format *.c : on compile tous les fichiers qui se finissent par .c (cela évite de mettre tous les fichiers un par un dans notre gcc)
+
+Après la compilation, un fichier a.out est créé. Et pour avoir notre/nos valeurs de retour, il faudra l'exécuter sur le terminal via la commande ./a.out
 
 ## Exigences :
-	- éditeurs autorisés: vi, vim, emacs
-	- Tous les fichiers sont compilé sur Ubuntu 20.04 LTS
-	- Le code utilise le style Betty
-	- Notre structure, ainsi que les prototypes de toutes les fonctions sont inclus dans le main.h
+- éditeurs autorisés: vi, vim, emacs
+- Tous les fichiers sont compilés sur Ubuntu 20.04 LTS
+- Le code utilise le style Betty
+- Notre structure, ainsi que les prototypes de toutes les fonctions sont inclus dans le main.h
+- aucune utilisation de la commande switch et de printf (excepté dans l'exemple du main.c)
+
+## Installation :
+Sur Linux et macOS, utiliser directement un terminal ou sur windows, utiliser PowerShell et insérer ce code :
+
+git clone https://github.com/AnneCecile2935/holbertonschool-printf.git/utilisateur
 
 ## Flowchart :
 ```mermaid
@@ -25,7 +33,7 @@ graph TD;
     C -- NON --> D{"if format %?"}
     C -- OUI --> F{"return -1"}
     D -- OUI --> E{"if %specifier?"}
-    X["📌 Structure tableau associe spécifiers à fonction*"] -.-> E
+    X["📌 *Structure tableau associe spécifiers à fonction"] -.-> E
     D -- NON --> Q["_printf"]
     E --> G["c"] & H["s"] & I["i"] & J["d"] & K["%"]
     G --> L["_print_char*"]
@@ -44,37 +52,42 @@ R --> S[return count]
 ```
 
 ### Contenu du repo :
-	_putchar.c
-	main.h
-	_printf.c
-	function_char.c
-	function_integer.c
-	function_pourcentage.c
-	function_strings.c
-	a.out
-	main.c
-	man_3_printf
-	README.md
 
-#### Exemple d'utilisation de la fonction _printf(code ou screenshots) avec le résultat en STDOUT
+| Fichiers               | Description |
+|------------------------|------------------------------------------------------------------------------------------------------------------------|
+| _putchar.c             | fonction qui permet d'afficher un caractère                                                                          |
+|main.h --                |fichier header qui contient les prototypes de fonctions et la structure relieur pour les spécificateurs|
+|_printf.c --             |fichier source, avec l'appel de toutes les fonctions spécificateurs et retourne une valeur suivant les conditions respectées|
+|function_char.c |       fichier source, qui contient une fonction pour afficher un caractère|
+|function_integer.c |-- fichier source, qui contient une fonction pour afficher un entier + ou - et la longueur d'une chaîne de caractère en nombre|
+|function_pourcentage.c| -- fichier source, qui contient une fonction pour afficher un pourcentage|
+|function_strings.c |-- fichier source, qui contient une fonction pour afficher une chaîne de caractère|
+|a.out |-- fichier compilé qui contient le résultat de notre code|
+|main.c |-- fichier source, qui sert d'exemple pour montrer que le résultat entre la commande printf et notre fonction _printf ont le même retour|
+|man_3_printf| -- Manuel de notre fonction _printf|
+|README.md| -- Explication et installation de la fonction|
 
 #### Comment accéder à la man page (via une commande d'exécution) :
 
 	man ./man_3_printf
 
-#### Exemples :
-	// _printf("Negative:[%d]\n", -762534); --> retourne -762534
+#### Exemples de sortie :
+	// _printf("Negative:[%d]\n", -762534); :arrow_right: -762534
 
-	// _printf("%c%cth %s%s a%cg%s: Y%sou %s no%ching%s Snow.%c", 'W', 'i', "some ", "more", 'r', "s", "", "know", 't', ", Jon", '\n'); --> With some more args: You know nothing, Jon snow.
+	// _printf("%c%cth %s%s a%cg%s: Y%sou %s no%ching%s Snow.%c", 'W', 'i', "some ", "more", 'r', "s", "", "know", 't', ", Jon", '\n'); :arrow_right: With some more args: You know nothing, Jon snow.
 
-	// _printf("Percent:[%%]\n"); --> %
+	// _printf("Percent:[%%]\n"); :arrow_right: %
 
-	// thought = _printf("Hello Samourai\n"); --> Hello Samourai
+	// thought = _printf("Hello Samourai\n"); :arrow_right: Hello Samourai
 
-	// _printf("Length:%d\n", thought); --> Lenght:15
+	// _printf("Length:%d\n", thought); :arrow_right: Lenght:15
 
 
 #### Failles mémoire détectés ?
 On détecte une fuite de mémoire avec l'utilisation de Valgrind, un outil notamment utile pour mettre en évidence des potentiels fuite de mémoire.
+	- on compile avec gcc.
 	- Valgrind ./a.out ! = total heap usage : allocs, frees, 1,024 bytes allocated
-	Après l'utilisation de Valgrind l'on peut voir que nous n'avons pas de fuite mémoire car notre allocation mémoire statique retiens bien une valeur retour (on retourne bien le nombre total de caractère imprimé et on ferme bien notre déclaration argument variadique par un va_end)
+	Après l'utilisation de Valgrind l'on peut voir que nous n'avons pas de fuite mémoire car notre allocation mémoire statique retiens bien une valeur retour.
+
+<h3 align="left">Languages and Tools:</h3>
+<p align="left"> <a href="https://www.cprogramming.com/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/c/c-original.svg" alt="c" width="40" height="40"/> </a> <a href="https://git-scm.com/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg" alt="git" width="40" height="40"/> </a> </p>

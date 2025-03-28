@@ -1,15 +1,21 @@
-NAME
-_printf
-        La fonction printf permet d'afficher un/des caractère(s) ou encore des entiers suivant une valeur(s) donné.
+.TH _printf mars 2025
+.RE
+.SH NAME
+.RE
+.B _printf
+        La fonction _printf permet d'afficher un/des caractère(s) ou encore des entiers suivant une valeur(s) donné.
 
-SYNOPSIS
-
+.SH SYNOPSIS
+.RE
+.RE
 #include <stdarg.h>
 #include "main.h"
 
 int _printf(const char *format, ...)
 
-DESCRIPTION
+.SH DESCRIPTION
+.RE
+.RE
 La fonction _printf est une fonction variadique, qui prend comme argument le format et qui retourne un int.
 Etant une fonction variadique, on utilise va_list, va_start, va_arg et va_end car c'est comme si elle avait un nombre infini d'arguments.
 Il y a deux façon de pouvoir afficher une sortie avec _prinft :
@@ -20,74 +26,133 @@ Suivant le format que reçoit la fonction, elle va agir différemment en executa
 Pour savoir comment agir, il faut lui attribuer un specifier qui va correspondre à l'execution d'une fonction pour afficher le bon type de valeur en sortie. Ces sépcifiers sont
 %s, %c, %i, %d.
 
-Conversion specifieurs
-s : Ce spécifieur indique à _printf qu'elle doit afficher une chaine de caractère via la fonction print_string
-c : Ce spécifier indique à _printf qu'elle doit afficher un caractère, via la fonction print_char
-% : Ce caractère sert à la fonction _printf à détecter s'il y aura un spécifier ou non et donc à executer une fonction pour afficher la valuer conforme
-i,d : Ce spécifier indique à _printf qu'elle doit afficher un int ou decimal, via la fonction.
+.B Conversion specifieurs
+.RE
+- s  Ce spécifieur indique à _printf qu'elle doit afficher une chaine de caractère via la fonction print_string
+.RE
+- c : Ce spécifier indique à _printf qu'elle doit afficher un caractère, via la fonction print_char
+.RE
+- % : Ce caractère sert à la fonction _printf à détecter s'il y aura un spécifier ou non et donc à executer une fonction pour afficher la valuer conforme
+.RE
+- i,d : Ce spécifier indique à _printf qu'elle doit afficher un int ou decimal, via la fonction.
+.RE
 
-RETURN VALUE
+.SH RETURN VALUE
+.RE
+.RE
 la fonction _printf retourne le nombres de caractère imprimés qui est stocké au fur et à mesure dans les différente boucle
 
-EXAMPLES
+.SH EXAMPLES
+.RE
+.RE
 _printf("%s",Le campus de Laval est super sympa!"\n"); Sortie :Le campus de Laval est super sympa!
+.RE
 _printf("%?") sortie:%?
+.RE
 _printf("Negative:[%d]\n", -5654646); Sortie -5654646
 
 
 
-PROGRAMME SOURCE
-
+.SH PROGRAMME SOURCE
+.RE
+.RE
 #include <stdarg.h>
-#include "main.h"
+.RE
+#include "main.h"q
+.RE
 /**
+.RE
 * _printf - print the format
+.RE
 * @format: arguments
+.RE
 * Return: count number of characters
+.RE
 */
+.RE
 /*int _printf(const char *format, ...)
+.RE
 {
+.RE
 specifiers type[] = {
+.RE
 {'c', print_char}, {'s', _print_strings},
+.RE
 {'%', _print_pourcentage}, {'d', print_int}, {'i', print_int}, {'\0', NULL},};
 int i = 0;
+.RE
 int j;
+.RE
 int count = 0;
+.RE
 va_list arg;
+.RE
 va_start(arg, format);
+.RE
 if (format == NULL)
+.RS
 	return (-1);
-while (format && format[i]) /* si le format est non nul
-	{
-	if (format[i] == '%')
-	{
-	i++;
-	for (j = 0; type[j].entry; j++)
-	{
-	if (format[i] == type[j].entry) /* s'il y a une correspondance
-	{
-	count += type[j].print_func(arg);
-	break; /* on s'arrête
-	}
-	}
-	if (!type[j].entry)
-	{
-	_putchar ('%');
-	_putchar (format[i]);
-	count += 2;
-	}
-	}
-	else
-	{
-	_putchar(format[i]);
-	count++;
-	}
-	i++;
-	}
-	va_end(arg);
-	return (count);
+.RE
+while (format && format[i])
+.RE
+{
+.RS
+if (format[i] == '%')
+.RS
+{
+.RE
+i++;
+.RE
+for (j = 0; type[j].entry; j++)
+.RS
+{
+.RE
+if (format[i] == type[j].entry)
+.RS
+{
+.RE
+count += type[j].print_func(arg);
+.RE
+break;
+.RE
 }
-
-Date et auteur
+.RE
+}
+.RE
+if (!type[j].entry)
+.RS
+{
+.RE
+_putchar ('%');
+.RE
+_putchar (format[i]);
+.RE
+count += 2;
+.RE
+}
+.RE
+}
+.RE
+else
+.RS
+{
+.RE
+_putchar(format[i]);
+.RE
+count++;
+.RE
+}
+.RE
+i++;
+.RE
+}
+.RE
+va_end(arg);
+.RE
+return (count);
+.RE
+}
+.RE
+.SH Date et auteur
 28-03-2024
 Robin et Anne-Cécile
