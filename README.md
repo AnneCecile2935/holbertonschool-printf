@@ -1,4 +1,4 @@
-# Holbertonschool-printf  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkOsDLXeCr-IfKDnkeycWiqx5Uc_F5fDugNg&s" alt="Logo Holberton" width="100"/>
+# Holbertonschool-printf  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkOsDLXeCr-IfKDnkeycWiqx5Uc_F5fDugNg&s" alt="Logo Holberton" style="float:left;" width="100"/>
 
 # :dart: C - printf
 __Cette fonction produit une sortie selon le format rencontré (si la valeur donnée est un entier, une chaîne de caractère, un caractère, etc...)__
