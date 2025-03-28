@@ -1,9 +1,11 @@
 # holbertonschool-printf
-# C - printf
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkOsDLXeCr-IfKDnkeycWiqx5Uc_F5fDugNg&s" alt="Logo Holberton" width="100"/>
+
+# \u1F3AF C - printf
 ** Cette fonction produit une sortie selon le format rencontré.
 Notre fonction _printf, engloble toutes les fonctions pour traiter chaque cas de format rencontré (si la valeur donnée est un entier, une chaîne de caractère, un caractère, etc...)**
 
-## Commande qui permet la compilation :
+## \u1F4BB Commande qui permet la compilation :
 gcc -Wall -Wextra -Werror -pedantic -std=gnu89 -Wno-format *.c
 * gcc : est utilisé pour compiler notre code
 * Wall - Wextra - Werror -pedantic -std=gnu89 : Le code respecte le standard C89 et tous les avertissements lors de la compilation sont activés (si toutes les erreurs ne sont pas corrigées, alors la compilation ne fonctionnera pas)
@@ -11,14 +13,14 @@ gcc -Wall -Wextra -Werror -pedantic -std=gnu89 -Wno-format *.c
 
 Après la compilation, un fichier a.out est créé. Et pour avoir notre/nos valeurs de retour, il faudra l'exécuter sur le terminal via la commande ./a.out
 
-## Exigences :
+ ## \u26A0 Exigences :
 - éditeurs autorisés: vi, vim, emacs
 - Tous les fichiers sont compilés sur Ubuntu 20.04 LTS
 - Le code utilise le style Betty
 - Notre structure, ainsi que les prototypes de toutes les fonctions sont inclus dans le main.h
 - aucune utilisation de la commande switch et de printf (excepté dans l'exemple du main.c)
 
-## Installation :
+## \u1F4E6 Installation :
 Sur Linux et macOS, utiliser directement un terminal ou sur windows, utiliser PowerShell et insérer ce code :
 
 git clone https://github.com/AnneCecile2935/holbertonschool-printf.git/utilisateur
@@ -51,39 +53,39 @@ R --> S[return count]
     style X stroke-width:2px,stroke-dasharray: 2
 ```
 
-### Contenu du repo :
+### \u1F4C1 Contenu du repo :
 
 | Fichiers               | Description |
 |------------------------|------------------------------------------------------------------------------------------------------------------------|
 | _putchar.c             | fonction qui permet d'afficher un caractère                                                                          |
-|main.h --                |fichier header qui contient les prototypes de fonctions et la structure relieur pour les spécificateurs|
-|_printf.c --             |fichier source, avec l'appel de toutes les fonctions spécificateurs et retourne une valeur suivant les conditions respectées|
+|main.h                |fichier header qui contient les prototypes de fonctions et la structure relieur pour les spécificateurs|
+|_printf.c              |fichier source, avec l'appel de toutes les fonctions spécificateurs et retourne une valeur suivant les conditions respectées|
 |function_char.c |       fichier source, qui contient une fonction pour afficher un caractère|
-|function_integer.c |-- fichier source, qui contient une fonction pour afficher un entier + ou - et la longueur d'une chaîne de caractère en nombre|
-|function_pourcentage.c| -- fichier source, qui contient une fonction pour afficher un pourcentage|
-|function_strings.c |-- fichier source, qui contient une fonction pour afficher une chaîne de caractère|
-|a.out |-- fichier compilé qui contient le résultat de notre code|
-|main.c |-- fichier source, qui sert d'exemple pour montrer que le résultat entre la commande printf et notre fonction _printf ont le même retour|
-|man_3_printf| -- Manuel de notre fonction _printf|
-|README.md| -- Explication et installation de la fonction|
+|function_integer.c |fichier source, qui contient une fonction pour afficher un entier + ou - et la longueur d'une chaîne de caractère en nombre|
+|function_pourcentage.c|fichier source, qui contient une fonction pour afficher un pourcentage|
+|function_strings.c |fichier source, qui contient une fonction pour afficher une chaîne de caractère|
+|a.out |fichier compilé qui contient le résultat de notre code|
+|main.c |fichier source, qui sert d'exemple pour montrer que le résultat entre la commande printf et notre fonction _printf ont le même retour|
+|man_3_printf| Manuel de notre fonction _printf|
+|README.md| Explication et installation de la fonction|
 
-#### Comment accéder à la man page (via une commande d'exécution) :
+#### \u1F4A1 Comment accéder à la man page (via une commande d'exécution) :
 
 	man ./man_3_printf
 
 #### Exemples de sortie :
-	// _printf("Negative:[%d]\n", -762534); :arrow_right: -762534
+_printf("Negative:[%d]\n", -762534); :arrow_right: -762534
 
-	// _printf("%c%cth %s%s a%cg%s: Y%sou %s no%ching%s Snow.%c", 'W', 'i', "some ", "more", 'r', "s", "", "know", 't', ", Jon", '\n'); :arrow_right: With some more args: You know nothing, Jon snow.
+_printf("%c%cth %s%s a%cg%s: Y%sou %s no%ching%s Snow.%c", 'W', 'i', "some ", "more", 'r', "s", "", "know", 't', ", Jon", '\n'); :arrow_right: With some more args: You know nothing, Jon snow.
 
-	// _printf("Percent:[%%]\n"); :arrow_right: %
+_printf("Percent:[%%]\n"); :arrow_right: %
 
-	// thought = _printf("Hello Samourai\n"); :arrow_right: Hello Samourai
+thought = _printf("Hello Samourai\n"); :arrow_right: Hello Samourai
 
-	// _printf("Length:%d\n", thought); :arrow_right: Lenght:15
+_printf("Length:%d\n", thought); :arrow_right: Lenght:15
 
 
-#### Failles mémoire détectés ?
+#### \u1F4A5 Failles mémoire détectés ?
 On détecte une fuite de mémoire avec l'utilisation de Valgrind, un outil notamment utile pour mettre en évidence des potentiels fuite de mémoire.
 	- on compile avec gcc.
 	- Valgrind ./a.out ! = total heap usage : allocs, frees, 1,024 bytes allocated
